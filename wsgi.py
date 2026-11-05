@@ -63,7 +63,7 @@ def hello():
         <div class="container">
             <h1>Python-verkkosovellus</h1>
             <p>Tämä sovellus pyörii onnistuneesti Gunicorn- ja Nginx-palveluiden takana CSC cPoudassa.</p>
-            <a href="https://github.com" target="_blank" class="btn">Avaa GitHub Repositorio</a>
+            <a href="https://github.com/ewde22/linux" target="_blank" class="btn">Avaa GitHub Repositorio</a>
         </div>
     </body>
     </html>
