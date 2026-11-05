@@ -12,9 +12,9 @@ def hello():
         <title>CSC Viikko 2</title>
         <style>
             body {
-                font-family: 'Courier New', Courier, monospace; /* Koodifontti koko sivulle */
-                background-color: #ffd1dc; /* Vaaleanpunainen tausta */
-                color: #800020; /* Burgundynpunainen leipäteksti */
+                font-family: 'Courier New', Courier, monospace;
+                background-color: #ffd1dc;
+                color: #800020;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -22,7 +22,7 @@ def hello():
                 margin: 0;
             }
             .container {
-                background: #fff0f5; /* Hieman vaaleampi vaaleanpunainen laatikon tausta */
+                background: #fff0f5;
                 padding: 40px;
                 border-radius: 12px;
                 box-shadow: 0 4px 15px rgba(128, 0, 32, 0.1);
@@ -31,22 +31,22 @@ def hello():
                 width: 100%;
             }
             h1 {
-                color: #800020; /* Burgundynpunainen otsikko */
+                color: #800020;
                 font-size: 24px;
                 margin-bottom: 10px;
                 font-weight: bold;
             }
             p {
-                color: #800020; /* Burgundynpunainen kuvausteksti */
+                color: #800020;
                 font-size: 15px;
                 line-height: 1.6;
                 margin-bottom: 30px;
             }
             .btn {
                 display: inline-block;
-                font-family: 'Courier New', Courier, monospace; /* Koodifontti myös painikkeeseen */
-                background-color: #800020; /* Burgundynpunainen painike */
-                color: #ffd1dc; /* Vaaleanpunainen teksti painikkeessa */
+                font-family: 'Courier New', Courier, monospace;
+                background-color: #800020;
+                color: #ffd1dc;
                 text-decoration: none;
                 padding: 12px 24px;
                 border-radius: 6px;
@@ -54,7 +54,7 @@ def hello():
                 transition: background-color 0.2s, color 0.2s;
             }
             .btn:hover {
-                background-color: #600018; /* Tummempi burgundy kohdistuksessa */
+                background-color: #600018;
                 color: #ffe4e1;
             }
         </style>
