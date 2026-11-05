@@ -1,4 +1,4 @@
-# CSC Linux-palvelin — Viikko 2
+# CSC Linux-palvelin
 
 Tämä on CSC cPoudassa pyörivä Python-verkkosovellus ja tietokanta.
 
@@ -9,4 +9,5 @@ Tämä on CSC cPoudassa pyörivä Python-verkkosovellus ja tietokanta.
 * **Käänteinen välityspalvelin:** Nginx
 
 ## Linkit
-* Projektin julkinen sivu: http://195.148.20.157/viikko2/
+* Projektin nettisivu: http://195.148.20.157/viikko2/
+
