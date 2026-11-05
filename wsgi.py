@@ -12,9 +12,9 @@ def hello():
         <title>CSC Viikko 2</title>
         <style>
             body {
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                background-color: #f4f7f6;
-                color: #333;
+                font-family: 'Courier New', Courier, monospace; /* Koodifontti koko sivulle */
+                background-color: #ffd1dc; /* Vaaleanpunainen tausta */
+                color: #800020; /* Burgundynpunainen leipäteksti */
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -22,37 +22,40 @@ def hello():
                 margin: 0;
             }
             .container {
-                background: white;
+                background: #fff0f5; /* Hieman vaaleampi vaaleanpunainen laatikon tausta */
                 padding: 40px;
                 border-radius: 12px;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+                box-shadow: 0 4px 15px rgba(128, 0, 32, 0.1);
                 text-align: center;
                 max-width: 500px;
                 width: 100%;
             }
             h1 {
-                color: #2c3e50;
+                color: #800020; /* Burgundynpunainen otsikko */
                 font-size: 24px;
                 margin-bottom: 10px;
+                font-weight: bold;
             }
             p {
-                color: #7f8c8d;
-                font-size: 16px;
+                color: #800020; /* Burgundynpunainen kuvausteksti */
+                font-size: 15px;
                 line-height: 1.6;
                 margin-bottom: 30px;
             }
             .btn {
                 display: inline-block;
-                background-color: #3498db;
-                color: white;
+                font-family: 'Courier New', Courier, monospace; /* Koodifontti myös painikkeeseen */
+                background-color: #800020; /* Burgundynpunainen painike */
+                color: #ffd1dc; /* Vaaleanpunainen teksti painikkeessa */
                 text-decoration: none;
                 padding: 12px 24px;
                 border-radius: 6px;
                 font-weight: bold;
-                transition: background-color 0.2s;
+                transition: background-color 0.2s, color 0.2s;
             }
             .btn:hover {
-                background-color: #2980b9;
+                background-color: #600018; /* Tummempi burgundy kohdistuksessa */
+                color: #ffe4e1;
             }
         </style>
     </head>
@@ -68,5 +71,3 @@ def hello():
 
 if __name__ == "__main__":
     app.run()
-
-
