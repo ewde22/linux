@@ -121,7 +121,13 @@ def hello():
             <br>
             <a href="https://github.com/ewde22/linux" target="_blank" class="btn">Avaa GitHub Repositorio</a>
 
-            
+	<div class="info box">
+		<strong>Kävijälaskuri ja sen toiminta:</strong><br>
+     		<strong>Käytetty tietokanta:</strong> SQLite3 (Pythonin sisäänrakennettu tiedostopohjainen relaatiotietokanta).<br>
+     		<strong>Tallennustapa:</strong> Jokaisella sivun latauksella suoritetaan SQL UPDATE -lause,
+ 		joka kasvattaa tietokantataulun lukemaa yhdellä.<br>
+     		<strong>Uudelleenkäynnistystesti:</strong> Testattu käynnistämällä virtuaalikone uudelleen. Laskuri jatkoi
+		siitä mihin se jäi ennen uudelleenkäynnistystä.           
         </div>
     </body>
     </html>
