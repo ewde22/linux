@@ -30,7 +30,7 @@ def hello():
         cursor.execute("SELECT maara FROM kaynnit WHERE id = 1")
         tulos = cursor.fetchone()
         
-        # Puretaan numero monikon sisältä turvallisesti
+        
         kayntimaara = tulos[0] if tulos else 1
 
     return f"""
