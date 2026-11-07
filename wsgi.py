@@ -113,13 +113,13 @@ def hello():
     <body>
         <div class="container">
             <h1>Python-verkkosovellus</h1>
-            <p>Tämä sovellus pyörii onnistuneesti Gunicorn- ja Nginx-palveluiden takana CSC cPoudassa.</p>
+            <p>Tämä sovellus pyörii Gunicorn- ja Nginx-palveluiden takana CSC cPoudassa.</p>
             
             <p>Sivun latauskerrat (tietokannassa):</p>
             <div class="counter">{kayntimaara}</div>
             
             <br>
-            <a href="https://github.com/ewde22/linux" target="_blank" class="btn">Avaa GitHub Repositorio</a>
+            <a href="https://github.com/ewde22/linux" target="_blank" class="btn">Avaa GitHub</a><br>
 
 	<div class="info box">
 		<strong>Kävijälaskuri ja sen toiminta:</strong><br>
