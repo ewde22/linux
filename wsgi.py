@@ -119,7 +119,8 @@ def hello():
             <div class="counter">{kayntimaara}</div>
             
             <br>
-            <a href="https://github.com/ewde22/linux" target="_blank" class="btn">Avaa GitHub</a><br>
+            <a href="https://github.com/ewde22/linux" target="_blank" class="btn">Avaa GitHub</a>
+		<br><br>
 
 	<div class="info box">
 		<strong>Kävijälaskuri ja sen toiminta:</strong><br>
