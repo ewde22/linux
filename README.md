@@ -1,6 +1,6 @@
 # Linux
 
-## Viikko 2: Python-app
+## Week 2: Python-app
 
 ## Architecture
 * **Server:** Linux (Ubuntu) CSC cPoudassa
@@ -11,7 +11,7 @@
 ## Links
 * Project website: http://195.148.20.157/viikko2/
 
-## Viikko 3: Bash and a Server Status Report
+## Week 3: Bash and a Server Status Report
 
  
 
