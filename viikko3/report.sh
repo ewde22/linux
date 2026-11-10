@@ -3,7 +3,7 @@
 #function for checking diskspace
 check_space() { 
 	percent=$(df -h | grep '/$' | awk '{print $5}' | cut -d'%' -f1)
-
+	
 	if [ "$percent" -lt 80 ]; then
 		echo "<span style='color: green; font-weight: bold;'>OK ($percent%)</span>"
 	else 
@@ -56,7 +56,7 @@ cat << EOF > /var/www/html/viikko3/index.html
         	.footer { text-align: center; 
 			font-size: 15px; 
 			margin-top: 40px; 
-			color: #4a2c11; }
+			color: #3d220a; }
     	</style>
 </head>
 
