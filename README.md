@@ -1,13 +1,18 @@
-# CSC Linux-palvelin
+# Linux
 
-Tämä on CSC cPoudassa pyörivä Python-verkkosovellus ja tietokanta.
+##Viikko 2: Python-app
 
-## Arkkitehtuuri
-* **Palvelin:** Linux (Ubuntu) CSC cPoudassa
-* **Sovelluskehys:** Python & Flask
-* **WSGI-palvelin:** Gunicorn
-* **Käänteinen välityspalvelin:** Nginx
+## Architecture
+* **Server:** Linux (Ubuntu) CSC cPoudassa
+* **Software developement:** Python & Flask
+* **WSGI-server:** Gunicorn
+* **Reverse proxy:** Nginx
 
-## Linkit
-* Projektin nettisivu: http://195.148.20.157/viikko2/
+## Links
+* Project website: http://195.148.20.157/viikko2/
+
+##Viikko 3: Bash and a Server Status Report
+
+ 
+
 
