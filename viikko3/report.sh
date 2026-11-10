@@ -7,7 +7,7 @@ check_space() {
 	if [ "$percent" -lt 80 ]; then
 		echo "<span style='color: green; font-weight: bold;'>OK ($percent%)</span>"
 	else 
-		echo "<span style='color: pink; font-weight: bold;'>WARNING ($percent%)</span>"
+		echo "<span style='color: red; font-weight: bold;'>WARNING ($percent%)</span>"
 	fi
 
 }
@@ -26,11 +26,37 @@ cat << EOF > /var/www/html/viikko3/index.html
 	<meta charset="utf-8">
 	<title>Palvelinraportti - Viikko 3</title>
 	<style>
-		body { font-family: 'Courier New', Courier, monospace; background-color: #ffd1dc; color: #800020; padding: 40px; text-align: center; }
-        	.container { background: #fff0f5; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(128,0,32,0.1); display: inline-block; text-align: left; max-width: 600px; }
-        	 h1 { text-align: center; font-size: 22px; }
-        	.info { margin: 15px 0; font-size: 15px; border-bottom: 1px dashed #800020; padding-bottom: 5px; }
-        	.footer { text-align: center; font-size: 12px; margin-top: 25px; color: #a04060; }
+		body { font-family: 'Cascadia Code', Courier New, Courier, monospace; 
+			background-color: #fff9c4; 
+			color: #3d220a; 
+			padding: 40px; 
+			text-align: center;
+			font-size: 18px; }
+
+        	.container { background: #fffde4; 
+			padding: 45px; 
+			border-radius: 16px; 
+			box-shadow: 0 6px 20px rgba(128,0,32,0.1); 
+			display: inline-block; 
+			text-align: left; 
+			max-width: 800px;
+			box-sizing: border-box; }
+
+        	 h1 { text-align: center; 
+			font-size: 32px;
+			color: #1e1105;
+			margin-top: 0;
+			margin-bottom: 30px; }
+
+        	.info { margin: 25px 0; 
+			font-size: 20px; 
+			border-bottom: 2px dashed #800020; 
+			padding-bottom: 10px; }
+
+        	.footer { text-align: center; 
+			font-size: 15px; 
+			margin-top: 40px; 
+			color: #4a2c11; }
     	</style>
 </head>
 
