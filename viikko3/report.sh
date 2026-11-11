@@ -57,8 +57,29 @@ cat << EOF > /var/www/html/viikko3/index.html
 			font-size: 15px; 
 			margin-top: 40px; 
 			color: #3d220a; }
+
+		.btn.wrap { text-align: center;
+			margin-top: 30px;
+			}
+
+		.btn { display: block;
+			width: fit-content;
+			margin: 30px auto 0 auto;
+			font-family: 'Cascadia Code', 'Courier New', Courier, monospace;
+			background-color: #59381e;
+			color: #fffde4;
+			text-decoration: none;
+			padding: 14px 28px;
+			border-radius: 10px;
+			font-size: 16px;
+			transition: background-color 0.2s;
+			}
+
+		.btn:hover { background-color: #3d2512;
+		}
     	</style>
 </head>
+
 
 <body>
 	<div class="container">
@@ -67,6 +88,7 @@ cat << EOF > /var/www/html/viikko3/index.html
 		<div class="info"><strong>Päälläoloaika:</strong> $Uptime</div>
 		<div class="info"><strong>Vapaa / yhteensä RAM:</strong> $Free_memory / $Memory_total</div>
 		<div class="info"><strong>Levytilan status:</strong> $Disc_status</div>
+		<div class="btn-wrap"><a href="dokumentaatio.html" target="_blank" class="btn">Avaa työn dokumentaatio</a></div>
 		<div class="footer">Tämä raportti päivittyy kerran minuutissa automaattisesti.</div>
 	</div>
 </body>

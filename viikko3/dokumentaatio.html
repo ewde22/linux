@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Työn kulun dokumentaatio - Viikko 3</title>
+    <style>
+        body { 
+            font-family: 'Cascadia Code', 'Courier New', Courier, monospace; 
+            background-color: #fff9c4; 
+            color: #1e1105; 
+            padding: 40px 20px; 
+            margin: 0;
+            line-height: 1.6;
+        }
+        .container { 
+            background: #fffde4; 
+            padding: 45px; 
+            border-radius: 16px; 
+            box-shadow: 0 6px 20px rgba(30, 17, 5, 0.06); 
+            max-width: 800px; 
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+        h1 { 
+            text-align: center; 
+            font-size: 30px; 
+            color: #1e1105; 
+            margin-top: 0;
+            margin-bottom: 30px;
+            border-bottom: 2px dashed #1e1105;
+            padding-bottom: 15px;
+        }
+        h2 {
+            font-size: 20px;
+            color: #59381e;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        p, li {
+            font-size: 16px;
+        }
+        code {
+            background-color: #f4e6be;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .btn {
+            display: block;
+            width: fit-content;
+            margin: 40px auto 0 auto;
+            font-family: 'Cascadia Code', 'Courier New', Courier, monospace;
+            background-color: #59381e;
+            color: #fffde4;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+        .btn:hover {
+            background-color: #291709;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Viikko 3: Työn kulun dokumentaatio</h1>
+
+        <h2>1. Tavoite ja ympäristö</h2>
+        <p>Tässä tehtävässä rakennettiin automaattisesti päivittyvä palvelimen tilaraportti CSC cPouta -virtuaalikoneelle (Ubuntu).</p>
+
+        <h2>2. Tiedonkeruu ja Bash-skripti</h2>
+        <p>Tiedot kerätään Linuxin peruskomennoilla ja suodatetaan putkituksen avulla:</p>
+        <ul>
+            <li><strong>Päivämäärä ja aika:</strong> Haettu komennolla <code>date</code>.</li>
+            <li><strong>Päälläoloaika:</strong> Suodatettu komennolla <code>uptime | cut -d',' -f1</code>.</li>
+            <li><strong>Keskusmuisti (RAM):</strong> Poimittu komennolla <code>free -h</code> ja <code>awk</code>.</li>
+            <li><strong>Levytila ja status:</strong> Poimittu juurihakemiston (<code>/</code>) käyttöprosentti ja tarkistettu tila <code>if</code>-lausekkeella (OK alle 80 %, muuten WARNING).</li>
+        </ul>
+
+        <h2>3. Automaatio (Cron)</h2>
+        <p>Skripti <code>report.sh</code> on ajastettu ajamaan itsensä kerran minuutissa <code>crontab</code>-ajastimen avulla, jolloin HTML-raportti pysyy jatkuvasti ajan tasalla myös palvelimen uudelleenkäynnistyksen jälkeen.</p>
+
+        <h2>4. Testaus ja varmennus</h2>
+        <p>Levytilan hälytyslogiikka testattiin syöttämällä skriptille manuaaliset testiarvot 50 %, 80 % ja 90 %. Lisäksi ajastuksen toiminta varmistettiin lokitiedostoista sekä käynnistämällä virtuaalikone uudelleen.</p>
+
+        <a href="index.html" class="btn">Takaisin tilaraporttiin</a>
+    </div>
+</body>
+</html>
