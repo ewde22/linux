@@ -46,49 +46,40 @@
             border-radius: 4px;
             font-weight: bold;
         }
-        .btn {
-            display: block;
-            width: fit-content;
-            margin: 40px auto 0 auto;
-            font-family: 'Cascadia Code', 'Courier New', Courier, monospace;
-            background-color: #59381e;
-            color: #fffde4;
-            text-decoration: none;
-            padding: 14px 28px;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: bold;
-            transition: background-color 0.2s ease, transform 0.1s ease;
-        }
-        .btn:hover {
-            background-color: #291709;
-            transform: translateY(-2px);
-        }
+        
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Viikko 3: Työn kulun dokumentaatio</h1>
+        <h1>Viikko 3: Työn dokumentaatio</h1>
 
-        <h2>1. Tavoite ja ympäristö</h2>
-        <p>Tässä tehtävässä rakennettiin automaattisesti päivittyvä palvelimen tilaraportti CSC cPouta -virtuaalikoneelle (Ubuntu).</p>
+        <h2>Mitä tein</h2>
+        <p>Tässä tehtävässä piti rakentaa automaattisesti päivittyvä palvelimen tilaraportti.</p>
 
-        <h2>2. Tiedonkeruu ja Bash-skripti</h2>
-        <p>Tiedot kerätään Linuxin peruskomennoilla ja suodatetaan putkituksen avulla:</p>
+        <h2>Tietojen keräys ja komennot</h2>
+        <p>Keräsin tiedot Linuxin peruskomennoilla ja tein suodatuksen putkituksen avulla:</p>
         <ul>
-            <li><strong>Päivämäärä ja aika:</strong> Haettu komennolla <code>date</code>.</li>
-            <li><strong>Päälläoloaika:</strong> Suodatettu komennolla <code>uptime | cut -d',' -f1</code>.</li>
-            <li><strong>Keskusmuisti (RAM):</strong> Poimittu komennolla <code>free -h</code> ja <code>awk</code>.</li>
+            <li><strong>Päivämäärä ja aika:</strong> Haku komennolla <code>date</code>.</li>
+            <li><strong>Päälläoloaika:</strong> Suodatus komennolla <code>uptime | cut -d',' -f1</code> Putkituksessa
+		ensimmäisen komennon tuloste ohjataan suoraan seuraavalle komennolle syötteeksi.</li>
+            <li><strong>Keskusmuisti (RAM):</strong> Poiminta komennolla <code>free -h</code> ja <code>awk</code>.</li>
             <li><strong>Levytila ja status:</strong> Poimittu juurihakemiston (<code>/</code>) käyttöprosentti ja tarkistettu tila <code>if</code>-lausekkeella (OK alle 80 %, muuten WARNING).</li>
         </ul>
 
-        <h2>3. Automaatio (Cron)</h2>
-        <p>Skripti <code>report.sh</code> on ajastettu ajamaan itsensä kerran minuutissa <code>crontab</code>-ajastimen avulla, jolloin HTML-raportti pysyy jatkuvasti ajan tasalla myös palvelimen uudelleenkäynnistyksen jälkeen.</p>
+        <h2>Automaatio (Cron)</h2>
+        <p>Skripti <code>report.sh</code> on ajastettu ajamaan itsensä kerran minuutissa <code>crontab</code>-ajastimen avulla,
+	 jolloin HTML-raportti pysyy jatkuvasti ajan tasalla myös palvelimen uudelleenkäynnistyksen jälkeen.</p>
 
-        <h2>4. Testaus ja varmennus</h2>
-        <p>Levytilan hälytyslogiikka testattiin syöttämällä skriptille manuaaliset testiarvot 50 %, 80 % ja 90 %. Lisäksi ajastuksen toiminta varmistettiin lokitiedostoista sekä käynnistämällä virtuaalikone uudelleen.</p>
+        <h2>Testaus</h2>
+        <p>Testasin levytilan hälytyslogiikan syöttämällä skriptille manuaaliset testiarvot 50 %, 80 % ja 90 %. Logiikka toimi
+	jokaisella arvolla kuten pitikin.
+	 Lisäksi varmistin ajastuksen toiminnan lokitiedostoista sekä käynnistämällä virtuaalikone uudelleen.</p>
 
-        <a href="index.html" class="btn">Takaisin tilaraporttiin</a>
+	<h2>Ongelmat ja mitä opin</h2>
+	<p>Putkitus oli minulle täysin uusi asia, joten sitä piti opiskella hieman aluksi. Mitään todella isoja ongelmia
+		en kohdannut tässä työssä.</p>
+
+        
     </div>
 </body>
 </html>

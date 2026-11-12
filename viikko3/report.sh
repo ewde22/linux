@@ -89,6 +89,8 @@ cat << EOF > /var/www/html/viikko3/index.html
 		<div class="info"><strong>Vapaa / yhteensä RAM:</strong> $Free_memory / $Memory_total</div>
 		<div class="info"><strong>Levytilan status:</strong> $Disc_status</div>
 		<div class="btn-wrap"><a href="dokumentaatio.html" target="_blank" class="btn">Avaa työn dokumentaatio</a></div>
+		<div class="btn-wrap"><a href="https://github.com/ewde22/linux/tree/main/viikko3" target="_blank" class="btn">
+		Tästä GitHubiin</a></div>
 		<div class="footer">Tämä raportti päivittyy kerran minuutissa automaattisesti.</div>
 	</div>
 </body>
