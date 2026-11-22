@@ -1,0 +1,7 @@
+bind-address            = 0.0.0.0
+server-id        = 1
+log_bin          = /var/log/mysql/mariadb-bin
+log_bin_index    = /var/log/mysql/mariadb-bin.index
+binlog_do_db     = eevalinux2_db
+#server-id              = 1
+#log_bin                = /var/log/mysql/mysql-bin.log
