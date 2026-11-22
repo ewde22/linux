@@ -1,8 +1,8 @@
 # Viikko 4: Varmuuskopiointi ja tietokannan replikointi
 
 ## Linkit
-- **Palvelin A (Primary – laskuri):** http://195.148.20.157
-- **Palvelin B (Replica – vain luku & dokumentaatio):** http://86.50.231.159
+- **Palvelin A (Primary – laskuri):** http://195.148.20.157/viikko2/
+- **Palvelin B (Replica – vain luku & dokumentaatio):** http://86.50.231.159/viikko4/
 
 ## Kansion sisältö
 - `varmuuskopio.sh`: Tunnin välein päivittyvä `rsync`-varmuuskopioskripti palvelimelta A palvelimelle B.
