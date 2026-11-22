@@ -139,7 +139,7 @@ def lue_laskuri():
             <div class="btn-group">
                 <a href="http://195.148.20.157/viikko2/" target="_blank" class="btn">Palvelin A: Laskuri (/viikko2/)</a>
                 <a href="http://86.50.231.159/viikko4/" target="_blank" class="btn">Palvelin B: Replica (/viikko4/)</a>
-                <a href="https://github.com/ewde22/linux" target="_blank" class="btn">GitHub-repositorio</a>
+                <a href="https://github.com/ewde22/linux/tree/main/viikko4" target="_blank" class="btn">GitHub-repositorio</a>
             </div>
 
             <div class="doc-section">
