@@ -54,6 +54,4 @@ jobs:
           chmod 644 ~/.ssh/known_hosts
 
       - name: Pull latest changes and run deploy script
-        run: |
-          ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} \
-            "cd ~/linux && git pull origin main && bash ~/linux/viikko5/deploy/deploy.sh ${{ github.sha }}"
+        run: ssh ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} "cd /home/ubuntu/linux && git pull origin main && bash /home/ubuntu/linux/viikko5/deploy/deploy.sh ${{ github.sha }}"
