@@ -16,30 +16,30 @@ HTML_TEMPLATE = """
     <title>Viikko 5 - Paikallinen LLM Chat</title>
     <style>
         body {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
             font-family: 'Courier New', Courier, monospace;
-            background-color: #f4f1ea;
-            color: #2c2c2c;
-            max-width: 820px;
-            margin: 30px auto;
-            padding: 20px;
+            line-height: 1.6;
+            background: #f3ebff;
+            color: #2b1347;
         }
         .card {
-            background: #ffffff;
-            border: 2px solid #2c2c2c;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 4px 4px 0px #2c2c2c;
-            margin-bottom: 25px;
+            background: #faf5ff;
+            border: 2px solid #b89ce0;
+            border-radius: 8px;
+            padding: 22px;
+            margin-bottom: 24px;
         }
         h1, h2 {
             margin-top: 0;
-            color: #1a1a1a;
+            color: #2b1347;
         }
         #chat-box {
             height: 360px;
             overflow-y: auto;
-            border: 1px solid #ccc;
-            background: #fafafa;
+            border: 1px solid #cbb4eb;
+            background: #ffffff;
             padding: 15px;
             border-radius: 6px;
             margin-bottom: 15px;
@@ -55,13 +55,13 @@ HTML_TEMPLATE = """
             white-space: pre-wrap;
         }
         .user {
-            background-color: #2c2c2c;
+            background-color: #4a237a;
             color: #ffffff;
             align-self: flex-end;
         }
         .assistant {
-            background-color: #e2e8f0;
-            color: #1a1a1a;
+            background-color: #e6d6fa;
+            color: #2b1347;
             align-self: flex-start;
         }
         .input-row {
@@ -70,34 +70,48 @@ HTML_TEMPLATE = """
         }
         input[type="text"] {
             flex: 1;
-            padding: 12px;
+            padding: 10px 12px;
             font-family: inherit;
             font-size: 14px;
-            border: 2px solid #2c2c2c;
+            background: #ffffff;
+            color: #2b1347;
+            border: 2px solid #9d78d1;
             border-radius: 6px;
         }
         button {
-            padding: 12px 20px;
+            padding: 10px 20px;
             font-family: inherit;
             font-weight: bold;
-            background-color: #2c2c2c;
+            background-color: #4a237a;
             color: #ffffff;
             border: none;
             border-radius: 6px;
             cursor: pointer;
         }
+        button:hover {
+            background-color: #36175c;
+        }
         button:disabled {
-            background-color: #888;
+            background-color: #a992c7;
         }
         .meta {
             font-size: 12px;
-            color: #555;
-            margin-top: 10px;
+            color: #4a237a;
+            margin-top: 12px;
         }
-        code {
-            background: #eee;
-            padding: 2px 5px;
+        .meta a {
+            color: #36175c;
+            font-weight: bold;
+        }
+        code, pre {
+            background: #e6d6fa;
+            color: #2b1347;
+            padding: 2px 6px;
             border-radius: 4px;
+        }
+        pre {
+            padding: 14px;
+            overflow-x: auto;
         }
     </style>
 </head>
