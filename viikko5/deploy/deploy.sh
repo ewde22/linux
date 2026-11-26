@@ -39,7 +39,7 @@ sudo /usr/bin/systemctl restart viikko5
 
 # Varmistetaan, että uusi versio vastaa ja palauttaa oikean commit SHA:n
 sleep 2
-HEALTH_JSON=$(curl -fsS http://127.0.0)
+HEALTH_JSON=$(curl -fsS http://127.0.0.1:5005/viikko5/health)
 echo "Health response: $HEALTH_JSON"
 
 if [[ "$HEALTH_JSON" != *"$COMMIT_SHA"* ]]; then
