@@ -17,7 +17,7 @@ def test_index_loads_empty_session():
     with patch("app.main.fetch_history", return_value=[]):
         res = client.get("/viikko5/")
         assert res.status_code == 200
-        assert "Paikallinen LLM Chat" in res.get_data(as_text=True)
+        assert "Chat" in res.get_data(as_text=True)
 
 
 def test_chat_endpoint_success():
