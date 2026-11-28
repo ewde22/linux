@@ -13,7 +13,7 @@ HTML_TEMPLATE = """
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viikko 5 - Paikallinen LLM Chat</title>
+    <title>Viikko 5</title>
     <style>
         body {
             max-width: 800px;
@@ -117,7 +117,7 @@ HTML_TEMPLATE = """
 </head>
 <body>
     <div class="card">
-        <h1>Paikallinen LLM Chat (Viikko 5)</h1>
+        <h1>Viikko 5 - Chat</h1>
         <p>Keskustele suoraan cPouta-palvelimella pyörivän <strong>{{ model }}</strong> -kielimallin kanssa.</p>
 
         <div id="chat-box">
@@ -132,67 +132,66 @@ HTML_TEMPLATE = """
         </form>
 
         <div class="meta">
-            Käynnissä oleva versio (Commit SHA): <code>{{ commit_sha }}</code> |
-            <a href="/viikko5/health">Health JSON</a> |
-            <a href="https://github.com" target="_blank">GitHub-repositorio</a>
+            Käynnissä oleva versio: <code>{{ commit_sha }}</code> |
+            
         </div>
     </div>
 
     <div class="card" id="docs">
-        <h2>Dokumentaatio (Viikko 5)</h2>
+        <h2>Viikko 5 dokumentaatio</h2>
 
-        <h3>1. Linkit</h3>
+        <h3>Linkit</h3>
         <ul>
-            <li><strong>Chat-sovellus:</strong> <a href="http://195.148.20">http://195.148.20</a></li>
-            <li><strong>Health-rajapinta:</strong> <a href="http://195.148.20health">http://195.148.20health</a></li>
-            <li><strong>GitHub-repositorio:</strong> <a href="https://github.com" target="_blank">https://github.com</a></li>
-            <li><strong>Epäonnistunut CI-työnkulku (todiste):</strong> <a href="https://github.com" target="_blank">Run #46153803763 (commit b2d9881)</a></li>
+            <li><strong>Chat-sovellus:</strong> <a href="http://195.148.20.157/viikko5/">http://195.148.20.157/viikko5</a></li>
+            <li><strong>Health-rajapinta:</strong> <a href="http://195.148.20.157/viikko5/health">http://195.148.20.157/viikko5/health</a></li>
+            <li><strong>GitHub-repositorio:</strong> <a href="https://github.com/ewde22/linux/tree/main/viikko5" target="_blank">https://github.com</a></li>
+            <li><strong>Epäonnistunut CI-työnkulku:</strong> <a href="https://github.com/ewde22/linux/actions/runs/46153803763" target="_blank">Run #46153803763 (commit b2d9881)</a></li>
         </ul>
 
-        <h3>2. Arkkitehtuuri ja pyyntöpolku</h3>
+        <h3>Arkkitehtuuri ja pyyntöpolku</h3>
         <pre>Selain (HTTP :80)
   └──&gt; Nginx (/viikko5/ location snippet)
          └──&gt; Gunicorn + Flask (127.0.0.1:5005, käyttäjä: viikko5user)
                 ├──&gt; MariaDB (localhost:3306, viikko5_db.messages - istuntohistoria)
                 └──&gt; Ollama (127.0.0.1:11434, qwen2.5:0.5b - paikallinen kielimalli)</pre>
 
-        <h3>3. CI/CD-putki (GitHub Actions)</h3>
+        <h3>CI/CD-putki</h3>
         <ul>
-            <li><strong>Pull Request &amp; Push:</strong> Jokainen push ja pull request suorittaa <code>ruff</code>-linterin ja <code>pytest</code>-yksikkötestit, joissa tietokanta ja Ollama-rajapinta on mockattu. Epäonnistunut testi estää julkaisun.</li>
+            <li><strong>Pull Request &amp; Push:</strong> Jokainen push ja pull request suorittaa <code>ruff</code>-linterin ja <code>pytest</code>-yksikkötestit, joissa tietokanta ja Ollama-rajapinta on korvattu. Epäonnistunut testi estää julkaisun.</li>
             <li><strong>Automaattinen julkaisu (main):</strong> Kun <code>main</code>-haaran muutos läpäisee testit, työnkulku ottaa SSH-yhteyden erillisellä avainparilla palvelimelle, hakee koodin, asentaa riippuvuudet, testaa Nginx-asetukset (<code>nginx -t</code>), käynnistää uudelleen vain <code>viikko5.service</code>-palvelun ja varmistaa <code>/viikko5/health</code>-osoitteesta, että käynnissä oleva <code>COMMIT_SHA</code> vastaa julkaistua committia.</li>
         </ul>
 
-        <h3>4. Käyttäjät, oikeudet, salaisuudet ja palomuuri</h3>
+        <h3>Käyttäjät, oikeudet, salaisuudet ja palomuuri</h3>
         <ul>
             <li><strong>Linux-käyttäjä:</strong> Erillinen kirjautumaton järjestelmäkäyttäjä <code>viikko5user</code> (<code>/usr/sbin/nologin</code>), joka omistaa kansion <code>/opt/viikko5</code>.</li>
             <li><strong>Tietokantakäyttäjä:</strong> <code>'viikko5_dbuser'@'localhost'</code>, jolla on rajatut <code>SELECT, INSERT</code> -oikeudet vain tauluun <code>viikko5_db.messages</code>.</li>
             <li><strong>Salaisuudet:</strong> Tietokannan salasana ja istuntoavain on tallennettu palvelimelle tiedostoon <code>/etc/viikko5.env</code> (oikeudet <code>640</code>, omistaja <code>root:viikko5user</code>). SSH-avain ja isäntäavain ovat GitHub Actions Secrets -asetuksissa.</li>
-            <li><strong>cPouta Security Group (SSH):</strong> Koska GitHub Actions -runnerit yhdistävät vaihtuvista IP-osoitteista, SSH-portti 22 on avoinna ulkoverkkoon. Tietoturvariski on minimoitu käyttämällä pelkkää avainpohjaista tunnistautumista (salasanakirjautuminen estetty), erillistä SSH-avainparia sekä tiukasti rajattua <code>sudoers</code>-sääntöä.</li>
+            <li><strong>cPouta Security Group:</strong> Koska GitHub Actions -runnerit yhdistävät vaihtuvista IP-osoitteista, SSH-portti 22 on avoinna ulkoverkkoon. Tietoturvariski on minimoitu käyttämällä pelkkää avainpohjaista tunnistautumista (salasanakirjautuminen estetty), erillistä SSH-avainparia sekä tiukasti rajattua <code>sudoers</code>-sääntöä.</li>
         </ul>
 
-        <h3>5. Nginx-integraatio ja Viikon 4 replikointi</h3>
+        <h3>Nginx-integraatio ja viikon 4 replikointi</h3>
         <ul>
             <li><strong>Nginx:</strong> Lisätty erillinen <code>include /etc/nginx/snippets/viikko5.conf;</code> -rivi olemassa olevaan sivustoon koskematta aiempien viikkojen reitteihin.</li>
             <li><strong>Viikon 4 tietokantareplikointi:</strong> Sovellus ajetaan Palvelimella A (pääpalvelin), koska Palvelin B on vain luku -tilassa (read-only replica). Uusi <code>viikko5_db</code>-tietokanta rajattiin replikoinnin ulkopuolelle, sillä se on itsenäinen sovellustietokanta eikä kuulu viikon 4 replikoituun kantaan.</li>
         </ul>
 
-        <h3>6. Kielimallin valinta ja palvelimen resurssit</h3>
+        <h3>Kielimallin valinta ja palvelimen resurssit</h3>
         <p>Palvelimella on 7,6 GiB RAM-muistia ja 77 Gt levytilaa (74 Gt vapaana). Valitsin malliksi kevyen <strong><code>qwen2.5:0.5b</code></strong> (397 MB), joka vastaa nopeasti pelkällä CPU:lla ja kuluttaa vain vähän muistia (1,1 GiB käytössä, 6,4 GiB vapaana malli ladattuna), joten swap-muistia ei tarvittu.</p>
 
-        <h3>7. Testitulokset</h3>
+        <h3>Testitulokset</h3>
         <ul>
             <li><strong>Julkinen chat &amp; istunnot:</strong> <code>/viikko5/</code> on julkisesti saavutettavissa, malli vastaa viesteihin, historia säilyy sivun päivityksen (F5) yli ja uusi Incognito-istunto alkaa tyhjänä.</li>
             <li><strong>Verkkoeristys:</strong> <code>ss -ltnp</code> vahvistaa, että Gunicorn (<code>127.0.0.1:5005</code>) ja Ollama (<code>127.0.0.1:11434</code>) kuuntelevat vain localhostia.</li>
             <li><strong>Automaattinen julkaisu &amp; SHA:</strong> Useat pushit <code>main</code>-haaraan päivittivät palvelun automaattisesti ja <code>/viikko5/health</code> päivitti vastaavan commit SHA -tunnisteen.</li>
             <li><strong>Virheellisen testin esto:</strong> Tahallinen epäonnistuva testi (commit <code>b2d9881</code>) pysähtyi CI-vaiheeseen (<a href="https://github.com" target="_blank">Actions-ajo</a>) eikä käynnistänyt julkaisua.</li>
-            <li><strong>Uudelleenkäynnistys (reboot):</strong> Palvelimen uudelleenkäynnistyksen jälkeen sekä <code>viikko5.service</code> että <code>ollama.service</code> käynnistyivät automaattisesti ilman käsin tehtäviä toimia.</li>
+            <li><strong>Uudelleenkäynnistys:</strong> Palvelimen uudelleenkäynnistyksen jälkeen sekä <code>viikko5.service</code> että <code>ollama.service</code> käynnistyivät automaattisesti ilman käsin tehtäviä toimia.</li>
             <li><strong>Aiempien viikkojen sivut:</strong> Viikkojen 1–4 sivut toimivat edelleen alkuperäisissä osoitteissaan.</li>
         </ul>
 
-        <h3>8. Ratkaistu ongelma ja opitut asiat</h3>
-        <p>Kehityksen aikana Nginx palautti aluksi 500 Internal Server Error -virheen, koska <code>proxy_pass</code>-osoitteesta puuttui porttinumero <code>:5005</code>, jolloin Nginx ohjasi pyynnöt silmukassa takaisin omaan porttiinsa 80. Virhelokin (<code>/var/log/nginx/error.log</code>) avulla silmukka paikannettiin nopeasti ja korjattiin Gitin kautta CI/CD-putken läpi.</p>
+        <h3>Ongelmat, ratkaisut ja opitut asiat</h3>
+        <p>Nginx palautti aluksi 500 Internal Server Error -virheen, koska <code>proxy_pass</code>-osoitteesta puuttui porttinumero <code>:5005</code>, jolloin Nginx ohjasi pyynnöt silmukassa takaisin omaan porttiinsa 80. Virhelokista (<code>/var/log/nginx/error.log</code>) katsomalla paikansin silmukan ja korjasin sen Gitin kautta CI/CD-putken läpi.</p>
 
-        <h3>9. Palvelimen todistetulosteet (salaisuudet poistettu)</h3>
+        <h3>Palvelimen todistetulosteet</h3>
         <pre>=== systemctl status viikko5 &amp; User/Group ===
 ● viikko5.service - Viikko 5 Local LLM Chat Flask App
      Loaded: loaded (/etc/systemd/system/viikko5.service; enabled; preset: enabled)
