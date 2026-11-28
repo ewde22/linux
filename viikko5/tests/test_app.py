@@ -38,3 +38,7 @@ def test_chat_endpoint_empty_message():
     client = app.test_client()
     res = client.post("/viikko5/api/chat", json={"message": "   "})
     assert res.status_code == 400
+
+
+def test_intentional_failure():
+    assert 1 == 2
